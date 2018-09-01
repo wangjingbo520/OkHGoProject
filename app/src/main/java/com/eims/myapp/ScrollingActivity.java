@@ -1,11 +1,11 @@
 package com.eims.myapp;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.eims.myapp.base.MyNetDataBaseActivity;
 import com.eims.myapp.bean.User;
 import com.eims.myapp.common.DialogCallback;
 import com.eims.myapp.common.LzyResponse;
@@ -16,7 +16,7 @@ import com.lzy.okgo.model.Response;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ScrollingActivity extends AppCompatActivity {
+public class ScrollingActivity extends MyNetDataBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
