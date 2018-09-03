@@ -6,6 +6,6 @@ package com.eims.myapp.net;
  * describe
  */
 public class Urls {
-    //  public static final String SERVER_URL = "http://d1.cto3.shovesoft.com/org.eims.XYBaby.web/";
-    public static final String SERVER_URL = "http://www.bjxybb.cn/";
+    public static final String SERVER_URL = "http://d1.cto3.shovesoft.com/org.eims.XYBaby.web/";
+    // public static final String SERVER_URL = "http://www.bjxybb.cn/";
 }

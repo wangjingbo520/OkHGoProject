@@ -9,6 +9,7 @@ import com.eims.myapp.bean.User;
 import com.eims.myapp.net.InterfaceMethod;
 import com.eims.myapp.utils.ToastUtil;
 import com.lzy.okgo.OkGo;
+import com.lzy.okgo.model.HttpParams;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +17,7 @@ import java.util.Map;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ScrollingActivity extends MyNetDataBaseActivity<User> {
+public class ScrollingActivity extends MyNetDataBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class ScrollingActivity extends MyNetDataBaseActivity<User> {
             case R.id.button:
                 Map<String, String> map = new HashMap<>(16);
                 map.put("userName", "15575163734");
-                map.put("pwd", "12456789");
+                map.put("pwd", "123456");
                 post(InterfaceMethod.LOGIN, map);
                 break;
             case R.id.button2:
@@ -42,10 +43,9 @@ public class ScrollingActivity extends MyNetDataBaseActivity<User> {
     }
 
     @Override
-    public void onNetData(String url, User mData) {
+    public void onNetData(String url, Object mData) {
         super.onNetData(url, mData);
-        ToastUtil.showMessage("恭喜您,登录成功");
-        Log.e(TAG, "onNetData: " + mData.toString());
+        User user = (User) mData;
     }
 
     @Override

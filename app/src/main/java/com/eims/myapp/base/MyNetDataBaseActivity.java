@@ -14,7 +14,7 @@ import java.util.Map;
  * @date 2018/9/1
  * describe 这里主要做网络请求的基类
  */
-public class MyNetDataBaseActivity<T> extends BaseActivity {
+public abstract class MyNetDataBaseActivity extends BaseActivity {
 
 
     /**
@@ -31,7 +31,8 @@ public class MyNetDataBaseActivity<T> extends BaseActivity {
                 .execute(new DialogCallback<LzyResponse<User>>(this) {
                     @Override
                     public void onSuccess(Response<LzyResponse<User>> response) {
-                        onNetData(url, (T) response.body().data);
+                        showToast(response.body().msg);
+                        onNetData(url, response.body().data);
                     }
                 });
     }
@@ -42,7 +43,7 @@ public class MyNetDataBaseActivity<T> extends BaseActivity {
      * @param url
      * @param mData
      */
-    public void onNetData(String url, T mData) {
+    public void onNetData(String url, Object mData) {
 
     }
 

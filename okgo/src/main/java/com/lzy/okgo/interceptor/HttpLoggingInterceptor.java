@@ -113,26 +113,26 @@ public class HttpLoggingInterceptor implements Interceptor {
             log(requestStartMessage);
 
             if (logHeaders) {
-                if (hasRequestBody) {
-                    // Request body headers are only present when installed as a network interceptor. Force
-                    // them to be included (when available) so there values are known.
-                    if (requestBody.contentType() != null) {
-                        log("\tContent-Type: " + requestBody.contentType());
-                    }
-                    if (requestBody.contentLength() != -1) {
-                        log("\tContent-Length: " + requestBody.contentLength());
-                    }
-                }
-                Headers headers = request.headers();
-                for (int i = 0, count = headers.size(); i < count; i++) {
-                    String name = headers.name(i);
-                    // Skip headers from the request body as they are explicitly logged above.
-                    if (!"Content-Type".equalsIgnoreCase(name) && !"Content-Length".equalsIgnoreCase(name)) {
-                        log("\t" + name + ": " + headers.value(i));
-                    }
-                }
-
-                log(" ");
+//                if (hasRequestBody) {
+//                    // Request body headers are only present when installed as a network interceptor. Force
+//                    // them to be included (when available) so there values are known.
+//                    if (requestBody.contentType() != null) {
+//                        log("\tContent-Type: " + requestBody.contentType());
+//                    }
+//                    if (requestBody.contentLength() != -1) {
+//                        log("\tContent-Length: " + requestBody.contentLength());
+//                    }
+//                }
+//                Headers headers = request.headers();
+//                for (int i = 0, count = headers.size(); i < count; i++) {
+//                    String name = headers.name(i);
+//                    // Skip headers from the request body as they are explicitly logged above.
+//                    if (!"Content-Type".equalsIgnoreCase(name) && !"Content-Length".equalsIgnoreCase(name)) {
+//                        log("\t" + name + ": " + headers.value(i));
+//                    }
+//                }
+//
+//                log(" ");
                 if (logBody && hasRequestBody) {
                     if (isPlaintext(requestBody.contentType())) {
                         bodyToString(request);
@@ -159,9 +159,9 @@ public class HttpLoggingInterceptor implements Interceptor {
             log("<-- " + clone.code() + ' ' + clone.message() + ' ' + clone.request().url() + " (" + tookMs + "ms）");
             if (logHeaders) {
                 Headers headers = clone.headers();
-                for (int i = 0, count = headers.size(); i < count; i++) {
-                    log("\t" + headers.name(i) + ": " + headers.value(i));
-                }
+//                for (int i = 0, count = headers.size(); i < count; i++) {
+//                    log("\t" + headers.name(i) + ": " + headers.value(i));
+//                }
                 log(" ");
                 if (logBody && HttpHeaders.hasBody(clone)) {
                     if (responseBody == null) return response;
