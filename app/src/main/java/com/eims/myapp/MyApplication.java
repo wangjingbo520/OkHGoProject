@@ -22,19 +22,22 @@ import okhttp3.OkHttpClient;
  * describe
  */
 public class MyApplication extends Application {
+    public static MyApplication appContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        appContext = this;
         initOkGo();
     }
 
     private void initOkGo() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.put("commonHeaderKey1", "commonHeaderValue1");
-        headers.put("commonHeaderKey2", "commonHeaderValue2");
-        HttpParams params = new HttpParams();
-        params.put("commonParamsKey1", "commonParamsValue1");
-        params.put("commonParamsKey2", "这里支持中文参数");
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.put("commonHeaderKey1", "commonHeaderValue1");
+//        headers.put("commonHeaderKey2", "commonHeaderValue2");
+//        HttpParams params = new HttpParams();
+//        params.put("commonParamsKey1", "commonParamsValue1");
+//        params.put("commonParamsKey2", "这里支持中文参数");
         //----------------------------------------------------------------------------------------//
 
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
@@ -51,12 +54,18 @@ public class MyApplication extends Application {
 
         builder.cookieJar(new CookieJarImpl(new DBCookieStore(this)));
 
-        OkGo.getInstance().init(this)
-                .setOkHttpClient(builder.build())
-                .setCacheMode(CacheMode.NO_CACHE)
-                .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)
-                .setRetryCount(3)
-                .addCommonHeaders(headers)
-                .addCommonParams(params);
+//        OkGo.getInstance().init(this)
+//                .setOkHttpClient(builder.build())
+//                .setCacheMode(CacheMode.NO_CACHE)
+//                .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)
+//                .setRetryCount(3);
+//                .addCommonHeaders(headers)
+//                .addCommonParams(params);
+    }
+
+    public static MyApplication getInstance() {
+        if (appContext == null) {
+        }
+        return appContext;
     }
 }

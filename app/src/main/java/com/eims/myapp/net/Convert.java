@@ -1,4 +1,4 @@
-package com.eims.myapp.common;
+package com.eims.myapp.net;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

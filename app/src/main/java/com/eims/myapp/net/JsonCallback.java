@@ -1,4 +1,4 @@
-package com.eims.myapp.common;
+package com.eims.myapp.net;
 
 import com.lzy.okgo.callback.AbsCallback;
 import com.lzy.okgo.request.base.Request;
