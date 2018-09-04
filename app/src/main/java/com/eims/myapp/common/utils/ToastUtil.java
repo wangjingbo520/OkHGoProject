@@ -1,4 +1,4 @@
-package com.eims.myapp.utils;
+package com.eims.myapp.common.utils;
 
 import android.os.Handler;
 import android.os.Looper;

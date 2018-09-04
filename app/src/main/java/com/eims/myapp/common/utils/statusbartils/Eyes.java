@@ -1,4 +1,4 @@
-package com.eims.myapp.utils.statusbartils;
+package com.eims.myapp.common.utils.statusbartils;
 
 import android.app.Activity;
 import android.content.Context;

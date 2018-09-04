@@ -34,7 +34,9 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ScrollingActivity" />
         <activity android:name=".ui.activity.LoginActivity" />
-        <activity android:name=".ui.activity.RegisterActivity"></activity>
+        <activity android:name=".ui.activity.RegisterActivity" />
+        <activity android:name=".ui.activity.SearchActivity" />
+        <activity android:name=".WebViewActivity"></activity>
     </application>
 
 </manifest>

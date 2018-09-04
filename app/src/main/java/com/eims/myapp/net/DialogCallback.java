@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.view.Window;
 
-import com.eims.myapp.utils.ToastUtil;
+import com.eims.myapp.common.utils.ToastUtil;
 import com.lzy.okgo.exception.HttpException;
 import com.lzy.okgo.exception.StorageException;
 import com.lzy.okgo.model.Response;

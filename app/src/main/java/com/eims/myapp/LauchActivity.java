@@ -1,7 +1,6 @@
 package com.eims.myapp;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +12,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 
 import com.eims.myapp.base.BaseActivity;
-import com.eims.myapp.utils.ToastUtil;
+import com.eims.myapp.ui.activity.LoginActivity;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
@@ -40,11 +39,6 @@ public class LauchActivity extends BaseActivity {
         mhandler = new Handler(mContext.getMainLooper());
         runnable = new CloseRunnable();
         LauchActivityPermissionsDispatcher.getMultiWithPermissionCheck(this);
-    }
-
-    @Override
-    public int getLayoutId() {
-        return 0;
     }
 
 
@@ -116,8 +110,8 @@ public class LauchActivity extends BaseActivity {
 
         @Override
         public void run() {
+            startActivity(new Intent(LauchActivity.this, LoginActivity.class));
             finish();
-            startActivity(new Intent(LauchActivity.this, MainActivity.class));
         }
     }
 

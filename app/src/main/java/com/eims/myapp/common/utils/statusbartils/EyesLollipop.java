@@ -1,4 +1,4 @@
-package com.eims.myapp.utils.statusbartils;
+package com.eims.myapp.common.utils.statusbartils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
