@@ -8,20 +8,20 @@ package com.eims.myapp.bean;
 public class User {
 
     /**
-     * expirationTime : 1546185600000
-     * userId : 19
-     * userName : 波波
-     * type : 1
-     * openingTime : 1534731062000
+     * expirationTime : 1567267200000
+     * openingTime : 1534337327000
      * mobile : 15575163734
+     * userName : 王静波
+     * type : 1
+     * userId : 58
      */
 
     private long expirationTime;
-    private int userId;
-    private String userName;
-    private int type;
     private long openingTime;
     private long mobile;
+    private String userName;
+    private int type;
+    private int userId;
 
     public long getExpirationTime() {
         return expirationTime;
@@ -29,30 +29,6 @@ public class User {
 
     public void setExpirationTime(long expirationTime) {
         this.expirationTime = expirationTime;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
     }
 
     public long getOpeningTime() {
@@ -71,15 +47,27 @@ public class User {
         this.mobile = mobile;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "expirationTime=" + expirationTime +
-                ", userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", type=" + type +
-                ", openingTime=" + openingTime +
-                ", mobile=" + mobile +
-                '}';
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

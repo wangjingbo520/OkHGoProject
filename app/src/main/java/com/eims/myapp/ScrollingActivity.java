@@ -1,6 +1,7 @@
 package com.eims.myapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.eims.myapp.base.MyNetDataBaseActivity;
@@ -39,15 +40,18 @@ public class ScrollingActivity extends MyNetDataBaseActivity {
         }
     }
 
+
     @Override
     public void onNetData(String url, Object mData) {
         super.onNetData(url, mData);
-        User user = (User) mData;
+
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        OkGo.getInstance().cancelTag(this);
+    public static <T> T get(Class<T> clz, Object o) {
+        if (clz.isInstance(o)) {
+            return clz.cast(o);
+        }
+        return null;
     }
+
 }

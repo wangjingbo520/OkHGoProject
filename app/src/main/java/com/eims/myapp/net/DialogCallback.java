@@ -2,8 +2,10 @@ package com.eims.myapp.net;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.view.Window;
 
+import com.eims.myapp.common.utils.NetworkUtils;
 import com.eims.myapp.common.utils.ToastUtil;
 import com.lzy.okgo.exception.HttpException;
 import com.lzy.okgo.exception.StorageException;
@@ -22,6 +24,7 @@ import java.net.UnknownHostException;
 public abstract class DialogCallback<T> extends JsonCallback<T> {
 
     private ProgressDialog dialog;
+    private Context context;
 
     private void initDialog(Activity activity) {
         dialog = new ProgressDialog(activity);
@@ -34,10 +37,20 @@ public abstract class DialogCallback<T> extends JsonCallback<T> {
     public DialogCallback(Activity activity) {
         super();
         initDialog(activity);
+        context = activity;
     }
 
     @Override
     public void onStart(Request<T, ? extends Request> request) {
+//        if (!NetworkUtils.isNetworkAvailable(context)) {
+//            ToastUtil.showMessage("网络中断，请检查您的网络状态");
+////            if (!request.) {
+////                this.unsubscribe();
+////            }
+//            onFinish();
+//            return;
+//        }
+
         if (dialog != null && !dialog.isShowing()) {
             dialog.show();
         }
@@ -72,5 +85,12 @@ public abstract class DialogCallback<T> extends JsonCallback<T> {
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
         }
+    }
+
+    /**
+     * 处理因网络请求状态异常而不能关闭列表刷新状态的问题
+     */
+    public void onRefreshFinish() {
+
     }
 }

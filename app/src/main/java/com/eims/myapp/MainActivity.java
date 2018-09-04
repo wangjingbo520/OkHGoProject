@@ -29,5 +29,11 @@ public class MainActivity extends MyNetDataBaseActivity {
                 startActivity(new Intent(mContext, SearchActivity.class));
             }
         });
+        findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, ScrollingActivity.class));
+            }
+        });
     }
 }

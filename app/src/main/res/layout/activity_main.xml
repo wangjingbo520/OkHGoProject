@@ -19,6 +19,13 @@
                 android:layout_height="wrap_content"
                 android:text="search" />
 
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
