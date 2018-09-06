@@ -1,1 +1,1 @@
-include ':app',':okgo', ':imageselector'
+include ':app',':okgo', ':picture_library', ':ucrop'
