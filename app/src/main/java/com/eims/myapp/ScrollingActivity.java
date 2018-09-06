@@ -30,8 +30,8 @@ public class ScrollingActivity extends MyNetDataBaseActivity {
             case R.id.button:
                 Map<String, String> map = new HashMap<>(16);
                 map.put("userName", "15575163734");
-                map.put("pwd", "123456");
-                post(InterfaceMethod.LOGIN, map);
+                map.put("pwd", "123456789");
+                postString(InterfaceMethod.LOGIN, map);
                 break;
             case R.id.button2:
                 break;
@@ -41,17 +41,5 @@ public class ScrollingActivity extends MyNetDataBaseActivity {
     }
 
 
-    @Override
-    public void onNetData(String url, Object mData) {
-        super.onNetData(url, mData);
-
-    }
-
-    public static <T> T get(Class<T> clz, Object o) {
-        if (clz.isInstance(o)) {
-            return clz.cast(o);
-        }
-        return null;
-    }
 
 }

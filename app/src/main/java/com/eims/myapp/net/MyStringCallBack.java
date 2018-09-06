@@ -3,11 +3,16 @@ package com.eims.myapp.net;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.util.Log;
 import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ProgressBar;
 
 import com.eims.myapp.common.utils.NetworkUtils;
 import com.eims.myapp.common.utils.ToastUtil;
 import com.eims.myapp.common.widgets.LoadingDialog;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.exception.HttpException;
 import com.lzy.okgo.exception.StorageException;
 import com.lzy.okgo.model.Response;
@@ -19,42 +24,41 @@ import java.net.UnknownHostException;
 
 /**
  * @author bobo
- * @date 2018/9/1
+ * @date 2018/9/6
  * describe
  */
-public abstract class DialogCallback<T> extends JsonCallback<T> {
-
+public abstract class MyStringCallBack extends StringCallback {
     private LoadingDialog.Builder builder;
     private LoadingDialog dialog;
     private Context context;
 
+    public MyStringCallBack(Activity activity) {
+        super();
+        context = activity;
+        initDialog(activity);
+    }
+
     private void initDialog(Activity activity) {
-        if (builder == null) {
+        if (builder==null){
             builder = new LoadingDialog.Builder(activity);
             builder.setMessage("加载中...").setCancelable(false);
         }
-        if (dialog == null) {
+        if (dialog==null){
             dialog = builder.create();
         }
     }
 
-    public DialogCallback(Activity activity) {
-        super();
-        initDialog(activity);
-        context = activity;
-    }
-
     @Override
-    public void onStart(Request<T, ? extends Request> request) {
+    public void onStart(Request<String, ? extends Request> request) {
+        super.onStart(request);
         if (dialog != null && !dialog.isShowing()) {
             dialog.show();
         }
     }
 
     @Override
-    public void onError(Response<T> response) {
+    public void onError(Response<String> response) {
         super.onError(response);
-        onRefreshFinish();
         Throwable exception = response.getException();
         if (exception != null) {
             exception.printStackTrace();
