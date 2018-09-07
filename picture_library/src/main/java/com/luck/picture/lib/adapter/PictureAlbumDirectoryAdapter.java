@@ -54,6 +54,7 @@ public class PictureAlbumDirectoryAdapter extends RecyclerView.Adapter<PictureAl
             folders = new ArrayList<>();
         }
         return folders;
+
     }
 
     @Override
