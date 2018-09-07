@@ -1,11 +1,8 @@
 package com.eims.myapp.net;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.view.Window;
 
-import com.eims.myapp.common.utils.NetworkUtils;
 import com.eims.myapp.common.utils.ToastUtil;
 import com.eims.myapp.common.widgets.LoadingDialog;
 import com.lzy.okgo.exception.HttpException;

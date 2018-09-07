@@ -1,17 +1,10 @@
 package com.eims.myapp.net;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ProgressBar;
 
-import com.eims.myapp.common.utils.NetworkUtils;
 import com.eims.myapp.common.utils.ToastUtil;
 import com.eims.myapp.common.widgets.LoadingDialog;
-import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.exception.HttpException;
 import com.lzy.okgo.exception.StorageException;
