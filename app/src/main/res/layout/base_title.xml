@@ -7,7 +7,7 @@
     <FrameLayout
         android:id="@+id/fl_title"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/x100"
         android:background="@color/white">
 
         <FrameLayout
@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginLeft="@dimen/x30"
                 android:background="@mipmap/back" />
         </FrameLayout>
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="#363636"
-            android:textSize="@dimen/sp_18" />
+            android:textSize="@dimen/textSize_32" />
 
         <FrameLayout
             android:id="@+id/fl_right"
@@ -44,16 +44,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_vertical"
-                android:layout_marginRight="@dimen/dp_15"
+                android:layout_marginRight="@dimen/x20"
                 android:textColor="@color/textColor3"
-                android:textSize="@dimen/sp_15" />
+                android:textSize="@dimen/textSize_30" />
 
             <ImageView
                 android:id="@+id/iv_right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_vertical"
-                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginRight="@dimen/x20"
                 android:visibility="gone" />
         </FrameLayout>
     </FrameLayout>

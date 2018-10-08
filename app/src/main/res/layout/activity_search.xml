@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.RegisterActivity">
 
-    <com.eims.myapp.common.search.FairySearchView
+    <com.eims.myapp.common.widgets.search.FairySearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

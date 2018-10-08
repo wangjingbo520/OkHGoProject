@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.eims.myapp.R;
 import com.eims.myapp.base.BaseActivity;
-import com.eims.myapp.common.search.FairySearchView;
+import com.eims.myapp.common.widgets.search.FairySearchView;
 
 import butterknife.BindView;
 

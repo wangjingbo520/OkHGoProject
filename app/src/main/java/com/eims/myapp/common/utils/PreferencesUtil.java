@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Set;
 
 
-
 /**
  * @author bobo
  * @date 2018/9/6
@@ -51,8 +50,8 @@ public class PreferencesUtil {
     /**
      * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
      *
-     * @param context  应用程序上下文
-     * @param key      key关键字
+     * @param context 应用程序上下文
+     * @param key     key关键字
      * @return 返回获取的String值
      */
     public static Object get(Context context, String key, Object defaultObject) {

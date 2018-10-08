@@ -15,7 +15,7 @@ import java.util.Map;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ScrollingActivity extends MyNetDataBaseActivity {
+public class ScrollingActivity extends MyNetDataBaseActivity<User> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class ScrollingActivity extends MyNetDataBaseActivity {
                 break;
         }
     }
-
 
 
 }
