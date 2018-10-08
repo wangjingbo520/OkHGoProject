@@ -1,10 +1,8 @@
 package com.eims.myapp.base;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.eims.myapp.net.DialogCallback;
-import com.eims.myapp.net.InterfaceMethod;
 import com.eims.myapp.net.LzyResponse;
 import com.eims.myapp.net.MyStringCallBack;
 import com.eims.myapp.net.Urls;
@@ -15,16 +13,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author bobo
- * @date 2018/9/1
- * describe 这里主要做网络请求的基类
+ * @date 2018/10/8
+ * describe fragment网络请求
  */
-public class MyNetDataBaseActivity<T> extends BaseActivity {
-    public Map<String, String> map = new HashMap<>(16);
+public abstract class MyNetDataBaseFragment<T> extends BaseFragment {
 
     /**
      * post请求  自定义泛型类型数据
@@ -37,7 +33,7 @@ public class MyNetDataBaseActivity<T> extends BaseActivity {
                 .tag(this)
                 .params(map)
                 .isMultipart(false)
-                .execute(new DialogCallback<LzyResponse<T>>(this) {
+                .execute(new DialogCallback<LzyResponse<T>>(mContext) {
                     @Override
                     public void onSuccess(Response<LzyResponse<T>> response) {
                         onNetDataT(url, response.body().data);
@@ -56,7 +52,7 @@ public class MyNetDataBaseActivity<T> extends BaseActivity {
                 .tag(this)
                 .params(map)
                 .isMultipart(false)
-                .execute(new MyStringCallBack(this) {
+                .execute(new MyStringCallBack(mContext) {
                     @Override
                     public void onSuccess(Response<String> response) {
                         try {
@@ -109,12 +105,11 @@ public class MyNetDataBaseActivity<T> extends BaseActivity {
      * @param url
      * @param data
      */
-    public void onNetDataT(String url, T data) {
+    private void onNetDataT(String url, T data) {
     }
 
-
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         OkGo.getInstance().cancelTag(this);
     }

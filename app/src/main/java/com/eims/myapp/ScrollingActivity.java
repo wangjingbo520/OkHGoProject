@@ -9,6 +9,8 @@ import com.eims.myapp.bean.User;
 import com.eims.myapp.net.InterfaceMethod;
 import com.lzy.okgo.OkGo;
 
+import org.json.JSONArray;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +30,6 @@ public class ScrollingActivity extends MyNetDataBaseActivity<User> {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button:
-                Map<String, String> map = new HashMap<>(16);
                 map.put("userName", "15575163734");
                 map.put("pwd", "123456789");
                 postString(InterfaceMethod.LOGIN, map);
@@ -40,5 +41,8 @@ public class ScrollingActivity extends MyNetDataBaseActivity<User> {
         }
     }
 
-
+    @Override
+    public void onNetDataT(String url, User data) {
+        super.onNetDataT(url, data);
+    }
 }
