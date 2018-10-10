@@ -41,7 +41,7 @@ public class LoginActivity extends MyNetDataBaseActivity {
             case R.id.tvPicture:
                 PictureSelector.create(this)
                         .openGallery(PictureMimeType.ofImage())
-                        .forResult(PictureConfig.CHOOSE_REQUEST);
+                        .forResult(PictureConfig.REQUEST_CAMERA);
                 break;
             default:
                 break;

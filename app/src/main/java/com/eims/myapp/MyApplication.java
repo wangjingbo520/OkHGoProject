@@ -3,6 +3,7 @@ package com.eims.myapp;
 import android.app.Application;
 import android.content.Context;
 
+import com.eims.myapp.net.CommonInterceptor;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -38,8 +39,10 @@ public class MyApplication extends Application {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
             @Override
             public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
-                layout.setPrimaryColorsId(R.color.colorPrimary, R.color.white);//全局设置主题颜色
-                return new ClassicsHeader(context);//.setTimeFormat(new DynamicTimeFormat("更新于
+                layout.setPrimaryColorsId(R.color.colorPrimary, R.color.white);
+                //全局设置主题颜色
+                return new ClassicsHeader(context);
+                //.setTimeFormat(new DynamicTimeFormat("更新于
                 // %s"));//指定为经典Header，默认是 贝塞尔雷达Header
             }
         });
@@ -77,6 +80,8 @@ public class MyApplication extends Application {
         loggingInterceptor.setColorLevel(Level.INFO);
         //log颜色级别，决定了log在控制台显示的颜色
         builder.addInterceptor(loggingInterceptor);
+        //拦截器－添加公用字段
+        builder.addInterceptor(new CommonInterceptor());
         builder.readTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
         builder.writeTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
         builder.connectTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
