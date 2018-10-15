@@ -1,6 +1,7 @@
 package com.eims.myapp.base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -110,6 +111,14 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         } else if (view.getId() == R.id.fl_right) {
             //更多
             onRightLisenter();
+        }
+    }
+
+
+    public void startTo(Class c, boolean isFinish) {
+        startActivity(new Intent(this, c));
+        if (isFinish) {
+            this.finish();
         }
     }
 

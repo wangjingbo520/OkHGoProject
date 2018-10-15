@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 28
@@ -22,12 +23,19 @@ android {
     }
 }
 
+greendao {
+    schemaVersion 1
+    daoPackage 'com.ping.greendao.gen'
+    targetGenDir 'src/main/java'
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:design:28.0.0-rc01'
+    implementation 'com.android.support:design:27.1.1'
     implementation project(':okgo')
     api 'com.jakewharton:butterknife:8.8.1'
     implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.readystatesoftware.chuck:library:1.0.4'
@@ -35,4 +43,5 @@ dependencies {
     implementation 'com.github.hotchemi:permissionsdispatcher:3.1.0'
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.1.0'
     implementation project(':picture_library')
+    implementation 'org.greenrobot:greendao:3.2.2'
 }

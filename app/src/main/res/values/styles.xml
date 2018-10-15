@@ -28,5 +28,11 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/textSize_32</item>
+        <item name="android:textColor">@color/textColor3</item>
+    </style>
+
+
 
 </resources>

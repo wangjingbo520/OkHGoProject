@@ -31,6 +31,11 @@ public abstract class MyStringCallBack extends StringCallback {
         initDialog(activity);
     }
 
+    public MyStringCallBack(Activity activity,boolean b) {
+        super();
+        context = activity;
+    }
+
     private void initDialog(Activity activity) {
         if (builder==null){
             builder = new LoadingDialog.Builder(activity);
@@ -78,6 +83,8 @@ public abstract class MyStringCallBack extends StringCallback {
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
         }
+
+        onRefreshFinish();
     }
 
     /**

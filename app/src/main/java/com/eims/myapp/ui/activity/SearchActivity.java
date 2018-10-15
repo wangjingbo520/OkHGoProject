@@ -15,8 +15,6 @@ import butterknife.BindView;
  */
 public class SearchActivity extends BaseActivity {
 
-    @BindView(R.id.search_view)
-    FairySearchView fairySearchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,34 +25,34 @@ public class SearchActivity extends BaseActivity {
     }
 
     private void initEvent() {
-        fairySearchView.setOnBackClickListener(new FairySearchView.OnBackClickListener() {
-            @Override
-            public void onClick() {
-                //TODO
-                finish();
-            }
-        });
-
-        fairySearchView.setOnCancelClickListener(new FairySearchView.OnCancelClickListener() {
-            @Override
-            public void onClick() {
-                finish();
-            }
-        });
-
-        fairySearchView.setOnEditChangeListener(new FairySearchView.OnEditChangeListener() {
-            @Override
-            public void onEditChanged(String nowContent) {
-                //nowContent：输入框中的内容
-            }
-        });
-
-        fairySearchView.setOnEnterClickListener(new FairySearchView.OnEnterClickListener() {
-            @Override
-            public void onEnterClick(String content) {
-                //content：输入框中的内容
-            }
-        });
+//        fairySearchView.setOnBackClickListener(new FairySearchView.OnBackClickListener() {
+//            @Override
+//            public void onClick() {
+//                //TODO
+//                finish();
+//            }
+//        });
+//
+//        fairySearchView.setOnCancelClickListener(new FairySearchView.OnCancelClickListener() {
+//            @Override
+//            public void onClick() {
+//                finish();
+//            }
+//        });
+//
+//        fairySearchView.setOnEditChangeListener(new FairySearchView.OnEditChangeListener() {
+//            @Override
+//            public void onEditChanged(String nowContent) {
+//                //nowContent：输入框中的内容
+//            }
+//        });
+//
+//        fairySearchView.setOnEnterClickListener(new FairySearchView.OnEnterClickListener() {
+//            @Override
+//            public void onEnterClick(String content) {
+//                //content：输入框中的内容
+//            }
+//        });
 
     }
 }

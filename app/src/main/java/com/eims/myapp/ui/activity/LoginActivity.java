@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.eims.myapp.MainActivity;
 import com.eims.myapp.R;
+import com.eims.myapp.TabViewPagerActivity;
 import com.eims.myapp.base.MyNetDataBaseActivity;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
@@ -30,7 +31,7 @@ public class LoginActivity extends MyNetDataBaseActivity {
         setTitle("登录");
     }
 
-    @OnClick({R.id.tvLogin, R.id.tvPicture})
+    @OnClick({R.id.tvLogin, R.id.tvPicture, R.id.tvTabViewpager})
     @Override
     public void onClick(View view) {
         super.onClick(view);
@@ -42,6 +43,9 @@ public class LoginActivity extends MyNetDataBaseActivity {
                 PictureSelector.create(this)
                         .openGallery(PictureMimeType.ofImage())
                         .forResult(PictureConfig.REQUEST_CAMERA);
+                break;
+            case R.id.tvTabViewpager:
+                startTo(TabViewPagerActivity.class, false);
                 break;
             default:
                 break;
