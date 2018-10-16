@@ -8,6 +8,7 @@ import com.eims.myapp.MainActivity;
 import com.eims.myapp.R;
 import com.eims.myapp.TabViewPagerActivity;
 import com.eims.myapp.base.MyNetDataBaseActivity;
+import com.eims.myapp.common.widgets.dialog.CustomDialog;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
@@ -37,7 +38,9 @@ public class LoginActivity extends MyNetDataBaseActivity {
         super.onClick(view);
         switch (view.getId()) {
             case R.id.tvLogin:
-                startActivity(new Intent(mContext, MainActivity.class));
+//                CustomDialog customDialog = new CustomDialog(this, "提示", "您确定登录吗?");
+//                customDialog.show();
+                //     startActivity(new Intent(mContext, MainActivity.class));
                 break;
             case R.id.tvPicture:
                 PictureSelector.create(this)

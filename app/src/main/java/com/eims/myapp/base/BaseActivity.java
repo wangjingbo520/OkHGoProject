@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eims.myapp.R;
-import com.eims.myapp.common.utils.DateUtil;
 import com.eims.myapp.common.utils.ToastUtil;
 import com.eims.myapp.common.utils.statusbartils.Eyes;
 

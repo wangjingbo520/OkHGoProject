@@ -2,6 +2,7 @@ package com.eims.myapp.common.utils;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Gravity;
 import android.widget.Toast;
 
 import com.eims.myapp.MyApplication;
@@ -48,11 +49,11 @@ public class ToastUtil {
                 synchronized (synObj) {
                     // 加上同步是为了每个toast只要有机会显示出来
                     if (toast != null) {
-                        // toast.cancel();
                         toast.setText(msg);
                         toast.setDuration(len);
                     } else {
                         toast = Toast.makeText(MyApplication.getInstance().getApplicationContext(), msg, len);
+                        toast.setGravity(Gravity.CENTER,0,0);
                     }
                     toast.show();
                 }
@@ -76,6 +77,7 @@ public class ToastUtil {
                         toast.setDuration(len);
                     } else {
                         toast = Toast.makeText(MyApplication.getInstance().getApplicationContext(), msg, len);
+                        toast.setGravity(Gravity.CENTER,0,0);
                     }
                     toast.show();
                 }
