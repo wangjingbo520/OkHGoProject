@@ -14,4 +14,11 @@
         <item>哈哈哈</item>
         <item>哈哈哈</item>
     </array>
+    <array name="tab_home">
+        <item>首页</item>
+        <item>居家</item>
+        <item>生活</item>
+        <item>摄影</item>
+        <item>娱乐</item>
+    </array>
 </resources>

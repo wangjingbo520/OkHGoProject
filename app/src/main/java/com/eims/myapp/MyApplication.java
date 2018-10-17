@@ -39,7 +39,7 @@ public class MyApplication extends Application {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
             @Override
             public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
-                layout.setPrimaryColorsId(R.color.textColor9, R.color.white);
+                layout.setPrimaryColorsId(R.color.white, R.color.textColor6);
                 //全局设置主题颜色
                 return new ClassicsHeader(context);
                 //.setTimeFormat(new DynamicTimeFormat("更新于

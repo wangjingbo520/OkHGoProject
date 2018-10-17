@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.eims.myapp.MainActivity;
 import com.eims.myapp.R;
+import com.eims.myapp.TabHomeActivity;
 import com.eims.myapp.TabViewPagerActivity;
 import com.eims.myapp.base.MyNetDataBaseActivity;
 import com.eims.myapp.common.widgets.dialog.CustomDialog;
@@ -40,7 +41,8 @@ public class LoginActivity extends MyNetDataBaseActivity {
             case R.id.tvLogin:
 //                CustomDialog customDialog = new CustomDialog(this, "提示", "您确定登录吗?");
 //                customDialog.show();
-                //     startActivity(new Intent(mContext, MainActivity.class));
+               //      startActivity(new Intent(mContext, MainActivity.class));
+                     startActivity(new Intent(mContext, TabHomeActivity.class));
                 break;
             case R.id.tvPicture:
                 PictureSelector.create(this)
