@@ -1,18 +1,11 @@
 package com.eims.myapp;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.eims.myapp.base.MyNetDataBaseActivity;
 import com.eims.myapp.bean.User;
 import com.eims.myapp.net.InterfaceMethod;
-import com.lzy.okgo.OkGo;
-
-import org.json.JSONArray;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

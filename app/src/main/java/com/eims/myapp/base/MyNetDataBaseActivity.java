@@ -56,7 +56,7 @@ public class MyNetDataBaseActivity<T> extends BaseActivity {
                 .tag(this)
                 .params(map)
                 .isMultipart(false)
-                .execute(new MyStringCallBack(this, true) {
+                .execute(new MyStringCallBack(this, false) {
                     @Override
                     public void onSuccess(Response<String> response) {
                         try {

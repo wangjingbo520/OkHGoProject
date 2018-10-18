@@ -31,17 +31,20 @@ public abstract class MyStringCallBack extends StringCallback {
         initDialog(activity);
     }
 
-    public MyStringCallBack(Activity activity,boolean b) {
+    public MyStringCallBack(Activity activity, boolean isHiddenDialog) {
         super();
         context = activity;
+        if (!isHiddenDialog) {
+            initDialog(activity);
+        }
     }
 
     private void initDialog(Activity activity) {
-        if (builder==null){
+        if (builder == null) {
             builder = new LoadingDialog.Builder(activity);
             builder.setMessage("加载中...").setCancelable(false);
         }
-        if (dialog==null){
+        if (dialog == null) {
             dialog = builder.create();
         }
     }
